@@ -17,3 +17,6 @@ jobs:
 
       - name: install dependencies
         run: dotnet restore ./AzureDemoApp/AzureDemoApp.csproj
+
+      - name: build
+        run: dotnet build ./AzureDemoApp/AzureDemoApp.csproj --configuration Realease --no-restore
