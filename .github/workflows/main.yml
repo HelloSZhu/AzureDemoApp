@@ -1,0 +1,19 @@
+# github action to deploy api to azure
+
+name: Deploy api to azure
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .net core
+        uses: actions/setup-dotnet@v3
+        with: 
+          dotnet-version: 7.0.x
+
+      - name: install dependencies
+        run: dotnet restore ./AzureDemoApp/AzureDemoApp.csproj
